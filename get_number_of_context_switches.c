@@ -17,6 +17,12 @@ SYSCALL_DEFINE2(get_number_of_context_switches, pid_t, pid, unsigned int *, numb
 
     getrusage(task, RUSAGE_SELF, &ru);
 
+    printk("---\n");
+    printk("task->nvcsw: %ld\n", task->nvcsw);
+    printk("task->nivcsw: %ld\n", task->nivcsw);
+    printk("task->signal->nvcsw: %ld\n", task->signal->nvcsw);
+    printk("task->signal->nivcsw: %ld\n", task->signal->nivcsw);
+    printk("task->last_switch_count: %ld\n", task->last_switch_count);
     printk("ru.ru_nvcsw: %ld\n", ru.ru_nvcsw);
     printk("ru.ru_nivcsw: %ld\n", ru.ru_nivcsw);
 

@@ -19,4 +19,8 @@ int main()
 		printf("Error!\n");
 	else
 		printf("This process encounters %u times context switches.\n", nvcw);
+
+	// getchar();	// cat /proc/PID/sched to validate the result
+
+	return 0;
 }
